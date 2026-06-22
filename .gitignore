@@ -1,0 +1,17 @@
+# 忽略 Python 缓存
+__pycache__/
+*.pyc
+
+# 忽略本地测试的魔法文件夹和敏感文件
+To_AI/
+*.pdf
+*.docx
+*.md
+!README.md  # 排除 README.md，这个必须传
+
+.env
+.vscode/
+
+# 忽略系统隐藏文件
+desktop.ini
+.DS_Store
