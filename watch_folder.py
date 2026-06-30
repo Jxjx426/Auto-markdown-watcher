@@ -5,10 +5,16 @@ from watchdog.events import FileSystemEventHandler
 from markitdown import MarkItDown
 
 # 自动定位到当前用户的桌面创建 To_AI 文件夹
-WATCH_DIR = os.getenv(
-    "WATCH_DIR",
-    os.path.join(os.path.expanduser("~"), "Desktop", "To_AI")
-)
+home = os.path.expanduser("~")
+
+onedrive_desktop = os.path.join(home, "OneDrive", "Desktop")
+desktop = os.path.join(home, "Desktop")
+
+if os.path.exists(onedrive_desktop):
+    WATCH_DIR = os.path.join(onedrive_desktop, "To_AI")
+else:
+    WATCH_DIR = os.path.join(desktop, "To_AI")
+
 
 md = MarkItDown()
 
